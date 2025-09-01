@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>C++ Features Mindmap (Interactive)</title>
+<style>
+  :root {
+    --bg: #0b1020;
+    --card: #141a2a;
+    --text: #e8eefc;
+    --muted: #a8b3cf;
+    --accent: #7aa2ff;
+    --ring: #2a3555;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, Noto Sans, "Apple Color Emoji","Segoe UI Emoji";
+    background: radial-gradient(1200px 800px at 10% -20%, #1b2240, #0b1020);
+    color: var(--text);
+  }
+  header {
+    padding: 24px 20px 8px;
+  }
+  h1 {
+    margin: 0 0 6px;
+    font-size: 28px;
+    letter-spacing: 0.2px;
+  }
+  p.subtitle {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .container {
+    padding: 16px 20px 40px;
+  }
+  .card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border: 1px solid var(--ring);
+    border-radius: 16px;
+    padding: 16px;
+    max-width: 1100px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  }
+  .tree {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 8px 16px;
+  }
+  .tree > li {
+    background: var(--card);
+    border: 1px solid var(--ring);
+    border-radius: 12px;
+    padding: 10px 12px;
+  }
+  .node > .cat {
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.2px;
+  }
+  .toggle {
+    margin-right: 8px;
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+    background: #0f1630;
+    color: var(--text);
+    border: 1px solid var(--ring);
+    cursor: pointer;
+    font-weight: 700;
+    line-height: 1;
+  }
+  ul.collapsed {
+    display: none;
+  }
+  ul.expanded {
+    display: block;
+    margin: 8px 0 0 34px;
+    padding-left: 10px;
+    border-left: 2px solid #263254;
+  }
+  li.leaf {
+    margin: 6px 0;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  footer {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 12px;
+  }
+  .controls {
+    display: flex;
+    gap: 8px;
+    margin: 10px 0 14px 2px;
+  }
+  .btn {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--ring);
+    background: #0f1630;
+    color: var(--text);
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>C++ Features Mindmap</h1>
+    <p class="subtitle">Click any category to expand/collapse. Use the controls to manage all.</p>
+  </header>
+  <div class="container">
+    <div class="card">
+      <div class="controls">
+        <button class="btn" id="expandAll">Expand all</button>
+        <button class="btn" id="collapseAll">Collapse all</button>
+      </div>
+      <ul class="tree">
+        
+    <li class="node">
+      <button class="toggle" aria-expanded="false" aria-controls="Core_Language_Features">+</button>
+      <span class="cat">Core Language Features</span>
+      <ul id="Core_Language_Features" class="collapsed">
+        <li class='leaf'>Variables and data types (fundamental types, user-defined types)</li>
+<li class='leaf'>Constants and literals</li>
+<li class='leaf'>Operators (arithmetic, logical, bitwise, assignment, comparison)</li>
+<li class='leaf'>Control flow statements (if/else, switch, loops)</li>
+<li class='leaf'>Functions and function overloading</li>
+<li class='leaf'>Scope and lifetime management</li>
+<li class='leaf'>Type casting and type conversion</li>
+<li class='leaf'>Enumeration types</li>
+<li class='leaf'>Arrays and multidimensional arrays</li>
+<li class='leaf'>Pointers and references</li>
+<li class='leaf'>Dynamic memory allocation and deallocation</li>
+      </ul>
+    </li>
+    
+    <li class="node">
+      <button class="toggle" aria-expanded="false" aria-controls="Object-Oriented_Programming">+</button>
+      <span class="cat">Object-Oriented Programming</span>
+      <ul id="Object-Oriented_Programming" class="collapsed">
+        <li class='leaf'>Classes and objects</li>
+<li class='leaf'>Constructors and destructors</li>
+<li class='leaf'>Member variables and member functions</li>
+<li class='leaf'>Access specifiers (private, protected, public)</li>
+<li class='leaf'>Inheritance (single and multiple)</li>
+<li class='leaf'>Virtual functions and polymorphism</li>
+<li class='leaf'>Abstract classes and pure virtual functions</li>
+<li class='leaf'>Function overriding</li>
+<li class='leaf'>Static members</li>
+<li class='leaf'>Friend functions and friend classes</li>
+<li class='leaf'>Operator overloading</li>
+      </ul>
+    </li>
+    
+    <li class="node">
+      <button class="toggle" aria-expanded="false" aria-controls="Memory_Management">+</button>
+      <span class="cat">Memory Management</span>
+      <ul id="Memory_Management" class="collapsed">
+        <li class='leaf'>Stack vs heap allocation</li>
+<li class='leaf'>Manual memory management with new/delete</li>
+<li class='leaf'>Memory leaks and dangling pointers</li>
+<li class='leaf'>Smart pointers (unique_ptr, shared_ptr, weak_ptr)</li>
+<li class='leaf'>RAII (Resource Acquisition Is Initialization)</li>
+<li class='leaf'>Copy constructors and assignment operators</li>
+<li class='leaf'>Move semantics and move constructors</li>
+<li class='leaf'>Rule of three/five/zero</li>
+      </ul>
+    </li>
+    
+    <li class="node">
+      <button class="toggle" aria-expanded="false" aria-controls="Templates_and_Generic_Programming">+</button>
+      <span class="cat">Templates and Generic Programming</span>
+      <ul id="Templates_and_Generic_Programming" class="collapsed">
+        <li class='leaf'>Function templates</li>
+<li class='leaf'>Class templates</li>
+<li class='leaf'>Template specialization</li>
+<li class='leaf'>Template metaprogramming</li>
+<li class='leaf'>Variadic templates</li>
+<li class='leaf'>SFINAE (Substitution Failure Is Not An Error)</li>
+<li class='leaf'>Concepts (C++20)</li>
+<li class='leaf'>Template argument deduction</li>
+      </ul>
+    </li>
+    
+    <li class="node">
+      <button class="toggle" aria-expanded="false" aria-controls="Standard_Template_Library_(STL)">+</button>
+      <span class="cat">Standard Template Library (STL)</span>
+      <ul id="Standard_Template_Library_(STL)" class="collapsed">
+        <li class='leaf'>Containers (vector, list, deque, set, map, unordered containers)</li>
+<li class='leaf'>Iterators and iterator categories</li>
+<li class='leaf'>Algorithms (sort, search, transform, etc.)</li>
+<li class='leaf'>Function objects and functors</li>
+<li class='leaf'>Allocators</li>
+<li class='leaf'>String class and string manipulation</li>
+      </ul>
+    </li>
+    
+    <li class="node">
+      <button class="toggle" aria-expanded="false" aria-controls="Advanced_Language_Features">+</button>
+      <span class="cat">Advanced Language Features</span>
+      <ul id="Advanced_Language_Features" class="collapsed">
+        <li class='leaf'>Namespaces and using declarations</li>
+<li class='leaf'>Exception handling (try/catch/throw)</li>
+<li class='leaf'>Function pointers and function objects</li>
+<li class='leaf'>Lambda expressions and closures</li>
+<li class='leaf'>Auto keyword and type deduction</li>
+<li class='leaf'>Range-based for loops</li>
+<li class='leaf'>Initializer lists</li>
+<li class='leaf'>Uniform initialization syntax</li>
+<li class='leaf'>Nullptr keyword</li>
+<li class='leaf'>Constexpr functions and variables</li>
+      </ul>
+    </li>
+    
+    <li class="node">
+      <button class="toggle" aria-expanded="false" aria-controls="C++11_and_Later_Features">+</button>
+      <span class="cat">C++11 and Later Features</span>
+      <ul id="C++11_and_Later_Features" class="collapsed">
+        <li class='leaf'>Move semantics and rvalue references</li>
+<li class='leaf'>Smart pointers</li>
+<li class='leaf'>Thread support library</li>
+<li class='leaf'>Atomic operations</li>
+<li class='leaf'>Regular expressions</li>
+<li class='leaf'>Random number generation</li>
+<li class='leaf'>Time utilities (chrono library)</li>
+<li class='leaf'>Tuple and pair types</li>
+<li class='leaf'>Hash tables (unordered containers)</li>
+      </ul>
+    </li>
+    
+    <li class="node">
+      <button class="toggle" aria-expanded="false" aria-controls="C++14_Features">+</button>
+      <span class="cat">C++14 Features</span>
+      <ul id="C++14_Features" class="collapsed">
+        <li class='leaf'>Generic lambdas</li>
+<li class='leaf'>Return type deduction for functions</li>
+<li class='leaf'>Variable templates</li>
+<li class='leaf'>Binary literals</li>
+<li class='leaf'>Digit separators</li>
+      </ul>
+    </li>
+    
+    <li class="node">
+      <button class="toggle" aria-expanded="false" aria-controls="C++17_Features">+</button>
+      <span class="cat">C++17 Features</span>
+      <ul id="C++17_Features" class="collapsed">
+        <li class='leaf'>Structured bindings</li>
+<li class='leaf'>If constexpr</li>
+<li class='leaf'>Fold expressions</li>
+<li class='leaf'>Optional type</li>
+<li class='leaf'>Variant type</li>
+<li class='leaf'>Any type</li>
+<li class='leaf'>String view</li>
+<li class='leaf'>Filesystem library</li>
+<li class='leaf'>Parallel algorithms</li>
+      </ul>
+    </li>
+    
+    <li class="node">
+      <button class="toggle" aria-expanded="false" aria-controls="C++20_Features">+</button>
+      <span class="cat">C++20 Features</span>
+      <ul id="C++20_Features" class="collapsed">
+        <li class='leaf'>Concepts and constraints</li>
+<li class='leaf'>Modules</li>
+<li class='leaf'>Coroutines</li>
+<li class='leaf'>Ranges library</li>
+<li class='leaf'>Calendar and timezone extensions</li>
+<li class='leaf'>Format library</li>
+<li class='leaf'>Bit manipulation utilities</li>
+<li class='leaf'>Three-way comparison operator</li>
+      </ul>
+    </li>
+    
+    <li class="node">
+      <button class="toggle" aria-expanded="false" aria-controls="C++23_Features">+</button>
+      <span class="cat">C++23 Features</span>
+      <ul id="C++23_Features" class="collapsed">
+        <li class='leaf'>Import standard library modules</li>
+<li class='leaf'>Multidimensional subscript operator</li>
+<li class='leaf'>Static call operator</li>
+<li class='leaf'>Optional monadic operations</li>
+<li class='leaf'>Expected type for error handling</li>
+      </ul>
+    </li>
+    
+    <li class="node">
+      <button class="toggle" aria-expanded="false" aria-controls="Preprocessor_Features">+</button>
+      <span class="cat">Preprocessor Features</span>
+      <ul id="Preprocessor_Features" class="collapsed">
+        <li class='leaf'>Macro definitions and expansion</li>
+<li class='leaf'>Conditional compilation</li>
+<li class='leaf'>Include guards and pragma once</li>
+<li class='leaf'>Predefined macros</li>
+<li class='leaf'>Stringification and token pasting</li>
+      </ul>
+    </li>
+    
+    <li class="node">
+      <button class="toggle" aria-expanded="false" aria-controls="Compilation_and_Linking">+</button>
+      <span class="cat">Compilation and Linking</span>
+      <ul id="Compilation_and_Linking" class="collapsed">
+        <li class='leaf'>Translation units</li>
+<li class='leaf'>Header files and implementation files</li>
+<li class='leaf'>Forward declarations</li>
+<li class='leaf'>Linkage specifications</li>
+<li class='leaf'>Inline functions</li>
+<li class='leaf'>Static and extern keywords</li>
+<li class='leaf'>One Definition Rule (ODR)</li>
+      </ul>
+    </li>
+    
+    <li class="node">
+      <button class="toggle" aria-expanded="false" aria-controls="Low-Level_Features">+</button>
+      <span class="cat">Low-Level Features</span>
+      <ul id="Low-Level_Features" class="collapsed">
+        <li class='leaf'>Bit manipulation</li>
+<li class='leaf'>Union types</li>
+<li class='leaf'>Volatile keyword</li>
+<li class='leaf'>Assembly language integration</li>
+<li class='leaf'>Memory alignment</li>
+<li class='leaf'>Platform-specific extensions</li>
+      </ul>
+    </li>
+    
+    <li class="node">
+      <button class="toggle" aria-expanded="false" aria-controls="Standard_Library_Components">+</button>
+      <span class="cat">Standard Library Components</span>
+      <ul id="Standard_Library_Components" class="collapsed">
+        <li class='leaf'>Input/output streams</li>
+<li class='leaf'>File handling</li>
+<li class='leaf'>Mathematical functions</li>
+<li class='leaf'>Type traits and type utilities</li>
+<li class='leaf'>Memory utilities</li>
+<li class='leaf'>Functional utilities</li>
+<li class='leaf'>Localization support</li>
+<li class='leaf'>Error handling utilities</li>
+      </ul>
+    </li>
+    
+      </ul>
+      <footer>Built for quick revision • Keyboard: press <b>E</b> to expand all, <b>C</b> to collapse all.</footer>
+    </div>
+  </div>
+
+<script>
+  function setAll(expand) {
+    document.querySelectorAll('.toggle').forEach(btn => {
+      const target = document.getElementById(btn.getAttribute('aria-controls'));
+      if (!target) return;
+      target.className = expand ? 'expanded' : 'collapsed';
+      btn.setAttribute('aria-expanded', expand ? 'true' : 'false');
+      btn.textContent = expand ? '−' : '+';
+    });
+  }
+
+  // attach listeners
+  document.querySelectorAll('.toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.getAttribute('aria-controls'));
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      if (expanded) {
+        target.className = 'collapsed';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = '+';
+      } else {
+        target.className = 'expanded';
+        btn.setAttribute('aria-expanded', 'true');
+        btn.textContent = '−';
+      }
+    });
+  });
+
+  document.getElementById('expandAll').addEventListener('click', () => setAll(true));
+  document.getElementById('collapseAll').addEventListener('click', () => setAll(false));
+
+  // keyboard shortcuts
+  document.addEventListener('keydown', (e) => {
+    if (e.key.toLowerCase() === 'e') setAll(true);
+    if (e.key.toLowerCase() === 'c') setAll(false);
+  });
+</script>
+</body>
+</html>
