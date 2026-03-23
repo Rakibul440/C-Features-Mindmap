@@ -1,0 +1,64 @@
+
+# Compiled object files
+*.o
+*.obj
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Static & dynamic libraries
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+
+# Debug files
+*.dSYM/
+*.stackdump
+
+# Precompiled headers
+*.gch
+*.pch
+
+# Build directories
+build/
+bin/
+out/
+Debug/
+Release/
+
+# CMake files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# Autotools
+aclocal.m4
+autom4te.cache/
+configure
+config.log
+config.status
+
+# Logs
+*.log
+
+# CLion / JetBrains
+.idea/
+cmake-build-*/
+
+# Visual Studio
+*.vcxproj*
+*.sln
+*.user
+*.filters
+
+# Mac system files
+.DS_Store
+
+# Linux temp files
+*~
